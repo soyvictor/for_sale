@@ -1,6 +1,11 @@
+<div class="for-sale-sign">
+  <p>For Sale</p>
+</div>
+
 <% @items.each do |item| %>
 <%= link_to item_path(item) do%>
   <div class="item-text">
+    <img src="https://picsum.photos/280" alt="">
     <p><strong><%= item.name %></strong></p>
     <p><%= item.description %></p>
   </div>
