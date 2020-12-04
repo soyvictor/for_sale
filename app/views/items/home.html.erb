@@ -2,17 +2,21 @@
   <p>For Sale</p>
 </div>
 
+<div class="my-container">
+
 <% @items.each do |item| %>
 <%= link_to item_path(item) do%>
   <div class="item-text">
 
   <% if item.photos.attached? %>
-    <%= cl_image_tag item.photos.first.key, width: 280, height: 280, crop: :fill,  class: "", alt: "first slide" %>
+    <%= cl_image_tag item.photos.first.key, width: 300, height: 300, crop: :fill,  class: "", alt: "first slide" %>
   <% else %>
-        <img src="https://picsum.photos/280" alt="">
+        <img src="https://picsum.photos/300" alt="">
   <% end %>
     <p><strong><%= item.name %></strong></p>
     <p><%= item.description %></p>
   </div>
 <% end %>
 <% end %>
+
+</div>
