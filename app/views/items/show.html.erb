@@ -4,3 +4,4 @@
   <%= cl_image_tag @item.photos.first.key, width: 400, height: 290, crop: :fill,  class: "", alt: "first slide" %>
   <% end %>
 <%= link_to "Edit", edit_item_path(@item) %>
+<%= link_to "Delete", item_path(@item), method: :delete, data: { confirm: "Are you sure?"} %>
