@@ -14,3 +14,23 @@
   margin: 0px;
 
 }
+
+.grid-container {
+  display: grid;
+  // width: 1200px;
+  // margin: auto;
+  grid-template-columns: 325px 500px auto;
+  grid-gap: 25px;
+  margin-top: 32px;
+}
+
+.css-grid {
+  display: grid;
+  grid-template-columns: repeat(autofill, minimax(200px, 1fr));
+}
+
+.css-item {
+  background-color: yellow;
+  border: 1px solid black;
+  height: 100px;
+}
