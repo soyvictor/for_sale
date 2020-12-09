@@ -1,33 +1,7 @@
-  <% if item.photos.attached? %>
-    <%= cl_image_tag item.photos.first.key, width: 325, height: 240, crop: :pad,  class: "img-rounded", alt: "first slide" %>
-  <% else %>
-        <img src="https://picsum.photos/325/240" class="img-rounded" alt="">
-  <% end %>
-    <p class="item-name"><%= item.name %><span class="price">$<%= item.price %></span></p>
-  </div>
-<% end %>
 
 
 
-<% @items.each do |item| %>
-
-  <!-- <%= link_to item_path(item) do%> -->
-    <div class="item-box">
-      <p>1</p>
-    </div>
-  <!-- <% end %> -->
-<% end %>
 
 
 
-<div class="for-sale-sign">
-  <p>FOR SALE</p>
-</div>
 
-<div class="grid-container">
-
-<div class="item-box"></div>
-<div class="item-box"></div>
-<div class="item-box"></div>
-
-</div>

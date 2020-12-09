@@ -1,17 +1,26 @@
-<div class="css-grid">
-  <div class="css-item">
-    Victor
-  </div>
-
-  <div class="css-item">
-
-victor
-  </div>
-
-  <div class="css-item">
-  victor
-
-  </div>
-
-
+<div class="for-sale-sign">
+  <p>FOR SALE</p>
 </div>
+
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="column">
+
+<% @items.each do |item| %>
+
+  <%= link_to item_path(item) do%>
+    <div class="item-box">
+        <% if item.photos.attached? %>
+          <%= cl_image_tag item.photos.first.key, width: 325, height: 240, crop: :pad,  class: "img-rounded", alt: "first slide" %>
+        <% else %>
+          <img src="https://picsum.photos/325/240" class="img-rounded" alt="">
+        <% end %>
+          <p class="item-name"><%= item.name %><span class="price">$<%= item.price %></span></p>
+        </div>
+  <% end %>
+  <% end %>
+    </div>
+
+    </div>
+
+    </div>

@@ -1,6 +1,7 @@
 // Import page-specific CSS files here.
 @import "home";
 @import "show";
+@import "body";
 
 .for-sale-sign {
   background-color: #eb3354;
@@ -16,21 +17,7 @@
 }
 
 .grid-container {
-  display: grid;
-  // width: 1200px;
-  // margin: auto;
-  grid-template-columns: 325px 500px auto;
-  grid-gap: 25px;
+  width: 1200px;
+  margin: auto;
   margin-top: 32px;
-}
-
-.css-grid {
-  display: grid;
-  grid-template-columns: repeat(autofill, minimax(200px, 1fr));
-}
-
-.css-item {
-  background-color: yellow;
-  border: 1px solid black;
-  height: 100px;
 }
