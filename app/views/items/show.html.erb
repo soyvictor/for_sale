@@ -1,38 +1,56 @@
-<div class="container" style="border: 1px black solid;">
+<div class="container mt-5" style="border: 1px black solid;">
   <h1 class="mt-3"><%= @item.name %> - $<%= @item.price %></h1>
 
-  <% if @item.photos.attached? %>
-    <div style="max-width: 500px;">
-       <div id="carouselExampleControls" class="carousel slide" data-ride="carousel" data-interval="false">
+  <div class="row">
+      <div class="col-lg-6">
+        <% if @item.photos.attached? %>
+          <div style="max-width: 500px;">
+             <div id="carouselExampleControls" class="carousel slide" data-ride="carousel" data-interval="false">
 
-        <div class="carousel-inner rounded mb-3" style="width: 100%; height: 500px !important;">
-          <div class="carousel-item active">
-            <%= cl_image_tag @item.photos.first.key, width: 500, height: 500, crop: :fill,  class: "d-block w-100", alt: "first slide" %>
-          </div>
+              <div class="carousel-inner rounded mb-3" style="width: 100%; height: 500px !important;">
+                <div class="carousel-item active">
+                  <%= cl_image_tag @item.photos.first.key, width: 500, height: 500, crop: :pad,  class: "d-block w-100 h-100", alt: "first slide" %>
+                </div>
 
-          <% @item.photos.drop(1).each do |photo| %>
-            <div class="carousel-item">
-              <%= cl_image_tag photo.key, width: 500, height: 500, crop: :fill,  class: "d-block w-100", alt: "a slide" %>
+                <% @item.photos.drop(1).each do |photo| %>
+                  <div class="carousel-item">
+                    <%= cl_image_tag photo.key, width: 500, height: 500, crop: :pad,  class: "d-block w-100 h-100", alt: "a slide" %>
+                  </div>
+                <% end %>
+              </div>
+
+              <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+              </a>
+
+              <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+              </a>
             </div>
+          </div>
+        <% end %>
+
+
+            <% if @item.photos.attached? %>
+              <div class="mb-2 mt-1">
+                <% @item.photos.take(4).each do |photo| %>
+                  <%= cl_image_tag photo.key, size:"70x70", style:"border-radius: 6px;" %>
+                <% end %>
+              </div>
           <% end %>
-        </div>
 
-        <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="sr-only">Previous</span>
-        </a>
-
-        <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="sr-only">Next</span>
-        </a>
-      </div>
     </div>
-  <% end %>
 
-  <p class="mt-3"><%= @item.description %></p>
-  <%= link_to "Edit", edit_item_path(@item) %>
-  <%= link_to "Delete", item_path(@item), method: :delete, data: { confirm: "Are you sure?"} %>
+    <div class="col-lg-6">
+      <p class="mt-3"><%= @item.description %></p>
+      <% if current_user == @item.user %>
+        <%= link_to "Edit", edit_item_path(@item) %>
+        <%= link_to "Delete", item_path(@item), method: :delete, data: { confirm: "Are you sure?"} %>
+      <% end %>
+    </div>
+ </div>
 </div>
 
 

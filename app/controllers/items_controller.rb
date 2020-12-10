@@ -1,6 +1,7 @@
 class ItemsController < ApplicationController
 
   before_action :find_item, only: [:show, :edit, :update, :destroy]
+  skip_before_action :authenticate_user!, only: [:home, :index, :show]
 
   def new
     @item = Item.new
