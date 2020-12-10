@@ -3,22 +3,22 @@
   width: 325px;
   height: 325px;
   background-color: white;
-  color: black;
   border-radius: 6px;
-  box-shadow: 2px 2px 8px #A0A0A0;
+  box-shadow: 1px 1px 4px #cccccc;
   margin: 16px;
+  color: #0001ee;
 }
 
 .img-rounded {
   border-radius: 6px 6px 0px 0px;
 }
-.item-box a {
-  text-decoration-line: none;
-}
+// .item-box a {
+//   // text-decoration-line: none;
+// }
 
-.item-box a:hover {
+// .item-box a:hover {
 
-}
+// }
 
 div.item-text {
   display: inline-block;
@@ -28,16 +28,21 @@ div.item-text {
   // margin-top: 8px;
   display: inline-block;
   margin: 8px;
-  font-size: 15px;
+  font-size: 16px;
+}
+
+.item-name-underline:hover {
+  text-decoration-line: underline;
 }
 
 .price {
   display: inline;
   color: #272727;
   border-radius: 3px;
-  padding: 1px;
+  padding: 1px 3px;
   border: 1px solid #cccccc;
   margin-left: 8px;
+  font-size: 13px;
 
 }
 
