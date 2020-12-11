@@ -12,9 +12,15 @@
   </head>
 
   <body>
-    <%= render 'shared/navbar' %>
+    <!-- <%= render 'shared/navbar' %> -->
     <%= render 'shared/flashes' %>
+    <div class="for-sale-sign">
+      <%= link_to root_path do %>
+      <p>FOR SALE</p>
+      <% end %>
+    </div>
 
     <%= yield %>
+    <%= yield(:carousel) %>
   </body>
 </html>
