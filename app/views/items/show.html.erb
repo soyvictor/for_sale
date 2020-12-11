@@ -9,12 +9,14 @@
 
               <div class="carousel-inner rounded mb-3" style="width: 100%; height: 500px !important;">
                 <div class="carousel-item active">
-                  <%= cl_image_tag @item.photos.first.key, width: 500, height: 500, crop: :pad,  class: "d-block w-100 h-100", alt: "first slide" %>
+                  <%= cl_image_tag @item.photos.first.key, width: 500, height: 500, crop: :pad, class: "d-block w-100 h-100 carousel-img", alt: "first slide"  %>
                 </div>
 
+
                 <% @item.photos.drop(1).each do |photo| %>
+
                   <div class="carousel-item">
-                    <%= cl_image_tag photo.key, width: 500, height: 500, crop: :pad,  class: "d-block w-100 h-100", alt: "a slide" %>
+                    <%= cl_image_tag photo.key, width: 500, height: 500, crop: :pad,  class: "d-block w-100 h-100 carousel-img", alt: "a slide" %>
                   </div>
                 <% end %>
               </div>
@@ -35,8 +37,11 @@
 
             <% if @item.photos.attached? %>
               <div class="mb-2 mt-1">
-                <% @item.photos.take(4).each do |photo| %>
-                  <%= cl_image_tag photo.key, size:"70x70", class: "thumbnail", style:"border-radius: 6px;" %>
+                <% the_num = 0 %>
+                <% @item.photos.take(10).each do |photo| %>
+
+                  <%= cl_image_tag photo.key, size:"70x70", class: "thumbnail", style:"border-radius: 6px;", :data => { :count => "#{the_num}" } %>
+                  <% the_num += 1 %>
                 <% end %>
               </div>
           <% end %>
