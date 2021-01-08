@@ -1,3 +1,5 @@
+<p style="margin:8px;">Hey, I'm Victor.  These are currently all the things I have for sale in Mexico City, specifically in Azcapotzalco.  I may be able to deliver some items.  You can contact me on Whatsapp at xxxxxxxxxxxxxxx.</p>
+
 <div class="container mt-3">
   <div class="row justify-content-center">
     <div class="column">
@@ -7,11 +9,13 @@
   <%= link_to item_path(item) do%>
     <div class="item-box">
         <% if item.photos.attached? %>
+        <div class="testest">Hi</div>
           <%= cl_image_tag item.photos.first.key, width: 325, height: 240, crop: :pad,  class: "img-rounded", alt: "first slide" %>
         <% else %>
           <img src="https://picsum.photos/325/240" class="img-rounded" alt="">
         <% end %>
-          <p class="item-name"><span class="item-name-underline"><%= item.name %></span><span class="price">$<%= item.price %></span></p> </div>
+          <p class="item-name"><span class="item-name-underline"><%= item.name %></span><span class="price">$<%= item.price %></span></p>
+    </div>
   <% end %>
   <% end %>
     </div>
@@ -19,3 +23,6 @@
     </div>
 
     </div>
+
+
+<%= javascript_pack_tag 'index' %>

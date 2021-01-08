@@ -2,8 +2,8 @@ const thumbnails = document.querySelectorAll('img.thumbnail');
 const carouselImages = document.querySelectorAll('.carousel-item');
 const thumbnailFirst = document.querySelector('.thumbnail');
 const thumbnailAll = document.querySelectorAll('.thumbnail');
-const nextButton = document.querySelector('.carousel-control-next-icon');
-const prevButton = document.querySelector('.carousel-control-prev-icon');
+const nextButton = document.querySelector('.carousel-control-next');
+const prevButton = document.querySelector('.carousel-control-prev');
 const thumbnailLength = document.querySelectorAll('.thumbnail').length;
 let thumbnailCount = 0;
 
