@@ -32,5 +32,9 @@
 }
 
 .carousel .carousel-item {
-    transition-duration: 0.1s;
+    transition-duration: 0.0000000001s;
+}
+
+.carousel-item {
+  cursor: zoom-in;
 }

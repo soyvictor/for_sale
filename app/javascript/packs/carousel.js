@@ -8,6 +8,9 @@ const thumbnailLength = document.querySelectorAll('.thumbnail').length;
 let thumbnailCount = 0;
 
 
+
+
+
 thumbnailFirst.classList.add('highlightOrange');
 // console.log(carouselImageActive);
 
@@ -57,4 +60,3 @@ const highlightThumbnailPrev = () => {
 
 nextButton.addEventListener('click', highlightThumbnailNext);
 prevButton.addEventListener('click', highlightThumbnailPrev);
-
