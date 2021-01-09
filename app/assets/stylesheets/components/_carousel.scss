@@ -246,15 +246,11 @@
   pointer-events: all;
 }
 
-// .carousel-buttons, .hidden-opacity {
-//   opacity: 0;
-//   pointer-events: all;
-// }
-
-// .carousel-buttons.open {
-//   opacity: 1;
-//   pointer-events: all;
-// }
+.image-counter {
+  display: grid;
+  align-items: center;
+  justify-items: center;
+}
 
 .carousel .carousel-control-prev, .carousel .carousel-control-next { visibility: hidden; }
 .carousel:hover .carousel-control-prev, .carousel:hover .carousel-control-next { visibility: visible; }

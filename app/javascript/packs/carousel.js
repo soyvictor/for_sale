@@ -5,11 +5,18 @@ const thumbnailAll = document.querySelectorAll('.thumbnail');
 const nextButton = document.querySelector('.carousel-control-next');
 const prevButton = document.querySelector('.carousel-control-prev');
 const thumbnailLength = document.querySelectorAll('.thumbnail').length;
+const imageCounter = document.querySelector('.image-counter');
+const imagesLength = Number.parseInt(imageCounter.dataset.count, 10);
+console.log(imagesLength);
 let thumbnailCount = 0;
 
 
 thumbnailFirst.classList.add('highlightOrange');
 // console.log(carouselImageActive);
+
+function updateImageCounter(count) {
+  imageCounter.innerText = `image ${count + 1} of ${imagesLength}`;
+}
 
 const highlightOrange = (e) => {
   thumbnails.forEach((thumbnail) => {
@@ -22,6 +29,7 @@ const highlightOrange = (e) => {
   });
   carouselImages[`${imageNumber}`].classList.add('active');
   thumbnailCount = imageNumber;
+  updateImageCounter(thumbnailCount);
 };
 
 thumbnails.forEach((thumbnail) => {
@@ -39,6 +47,7 @@ const highlightThumbnailNext = () => {
     thumbnailAll[0].classList.add('highlightOrange');
     thumbnailCount = 0;
   }
+  updateImageCounter(thumbnailCount);
 };
 
 const highlightThumbnailPrev = () => {
@@ -52,27 +61,8 @@ const highlightThumbnailPrev = () => {
     thumbnailAll[`${thumbnailCount - 1}`].classList.add('highlightOrange');
     thumbnailCount -= 1;
   }
+  updateImageCounter(thumbnailCount);
 };
-
-// carouselImages.forEach((image) => {
-//   image.addEventListener('mouseover', (e) => {
-//     const buttons = image.parentElement.parentElement.querySelectorAll('.carousel-buttons');
-//     buttons.forEach((button) => {
-//       button.classList.add('open');
-//     })
-
-//   });
-// });
-
-// carouselImages.forEach((image) => {
-//   image.addEventListener('mouseout', (e) => {
-//     const buttons = image.parentElement.parentElement.querySelectorAll('.carousel-buttons');
-//     buttons.forEach((button) => {
-//       button.classList.remove('open');
-//     })
-
-//   });
-// });
 
 
 nextButton.addEventListener('click', highlightThumbnailNext);
