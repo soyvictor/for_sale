@@ -7,6 +7,10 @@
   box-shadow: 1px 1px 4px #cccccc;
   margin: 16px;
   color: #0001ee;
+  // outline-style: solid;
+  // outline-width: 1px;
+  // outline-color: rgba(204, 204, 204, 1.00);
+  // border: 1px solid rgba(204, 204, 204, 1.00);
 }
 
 .img-rounded {
@@ -43,6 +47,23 @@ div.item-text {
   border: 1px solid #cccccc;
   margin-left: 8px;
   font-size: 13px;
+
+}
+
+.corner-price {
+  position: absolute;
+  z-index: 1000;
+  top: 0;
+  left: 0;
+  background: white;
+  margin: 0px;
+  padding: 2px 5px;
+  border-radius: 5px 0px 5px 0px;
+  font-size: 14px;
+  border-style: none solid solid none;
+}
+
+.display-image-count {
 
 }
 
