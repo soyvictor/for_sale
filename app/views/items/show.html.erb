@@ -20,22 +20,24 @@
                   </div>
                 <% end %>
               </div>
-
+              <% if @item.photos.length > 1 %>
               <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                 <span class="sr-only">Previous</span>
               </a>
-
+              <% end %>
+              <% if @item.photos.length > 1 %>
               <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
                 <span class="carousel-control-next-icon" aria-hidden="true"></span>
                 <span class="sr-only">Next</span>
               </a>
+              <% end %>
             </div>
           </div>
         <% end %>
 
 
-            <% if @item.photos.attached? %>
+            <% if @item.photos.attached? && @item.photos.length > 1 %>
               <div class="mb-2 mt-1">
                 <% the_num2 = 0 %>
                 <% @item.photos.take(10).each do |photo| %>
@@ -60,9 +62,13 @@
 
    <div class="modal">
       <div class="modalInner">
-        <button aria-label="Previous Photo" class="prev">←</button>
+        <% if @item.photos.length == 1 %>
+        <button aria-label="Previous Photo" class="prev hidden-opacity"><</button>
+        <% else %>
+        <button aria-label="Previous Photo" class="prev"><</button>
+        <% end %>
         <figure>
-          <%= cl_image_tag @item.photos.first.key, width: 600, height: 600, crop: :pad, alt: "first slide" %>
+          <%= cl_image_tag @item.photos.first.key, width: 800, height: 800, crop: :pad, alt: "first slide" %>
           <figcaption>
             <h2>Test Title</h2>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor dignissimos obcaecati nisi placeat eaque
@@ -71,7 +77,11 @@
               exercitationem!</p>
           </figcaption>
         </figure>
-        <button class="next" aria-label="Next Photo">→</button>
+        <% if @item.photos.length == 1 %>
+        <button class="next hidden-opacity" aria-label="Next Photo">></button>
+        <% else %>
+        <button class="next" aria-label="Next Photo">></button>
+        <% end %>
       </div>
     </div>
 

@@ -9,7 +9,6 @@
   <%= link_to item_path(item) do%>
     <div class="item-box">
         <% if item.photos.attached? %>
-        <div class="testest">Hi</div>
           <%= cl_image_tag item.photos.first.key, width: 325, height: 240, crop: :pad,  class: "img-rounded", alt: "first slide" %>
         <% else %>
           <img src="https://picsum.photos/325/240" class="img-rounded" alt="">

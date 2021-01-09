@@ -78,6 +78,7 @@ a.button, button, input[type="button"] {
 
 :focus {
   outline-color: var(--pink);
+  border: 2px solid transparent;
 }
 
 fieldset {
