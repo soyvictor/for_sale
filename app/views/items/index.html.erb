@@ -15,7 +15,7 @@
         <% end %>
           <p class="item-name"><span class="item-name-underline"><%= item.name %></span><span class="price">$<%= item.price %></span></p>
           <% if item.photos.count > 1 %>
-          <p class="display-image-count">image 1 of <%= item.photos.count %></p>
+          <div class="display-image-count">image 1 of <%= item.photos.count %></div>
           <% end %>
           <p class="price corner-price">$<%= item.price %></p>
     </div>
@@ -28,4 +28,6 @@
     </div>
 
 
+<%= javascript_pack_tag 'items' %>
 <%= javascript_pack_tag 'index' %>
+
