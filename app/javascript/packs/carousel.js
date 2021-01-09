@@ -8,9 +8,6 @@ const thumbnailLength = document.querySelectorAll('.thumbnail').length;
 let thumbnailCount = 0;
 
 
-
-
-
 thumbnailFirst.classList.add('highlightOrange');
 // console.log(carouselImageActive);
 
@@ -56,6 +53,26 @@ const highlightThumbnailPrev = () => {
     thumbnailCount -= 1;
   }
 };
+
+// carouselImages.forEach((image) => {
+//   image.addEventListener('mouseover', (e) => {
+//     const buttons = image.parentElement.parentElement.querySelectorAll('.carousel-buttons');
+//     buttons.forEach((button) => {
+//       button.classList.add('open');
+//     })
+
+//   });
+// });
+
+// carouselImages.forEach((image) => {
+//   image.addEventListener('mouseout', (e) => {
+//     const buttons = image.parentElement.parentElement.querySelectorAll('.carousel-buttons');
+//     buttons.forEach((button) => {
+//       button.classList.remove('open');
+//     })
+
+//   });
+// });
 
 
 nextButton.addEventListener('click', highlightThumbnailNext);
