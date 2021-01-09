@@ -62,7 +62,7 @@
 }
 
 
-// bootstrap button styling.  do not use here.
+// wesbos base css button styling.
 a {
   color: var(--blue);
   text-decoration-color: var(--yellow);
@@ -74,18 +74,38 @@ a.button, button, input[type="button"] {
   background: white;
   padding: 1rem;
   border: 0;
-  border: 2px solid transparent;
+  // border: 2px solid transparent;
   text-decoration: none;
   font-weight: 600;
   font-size:2rem;
+  outline: none;
 }
 
-button:focus {
-  border: 2px solid transparent;
-  text-decoration: none;
+button:hover {
+  color: #302D2C;
+  font-weight: bold;
 }
 
-:focus {
-  outline-color: var(--pink);
+// firefox and all settings
+* {
+  outline: none;
 }
+
+a:active,
+a:focus {
+    -moz-outline-style: none;
+}
+// chrome setting here
+button:focus {outline:0;}
+
+
+
+// button:focus {
+//   border: 2px solid transparent;
+//   text-decoration: none;
+// }
+
+// :focus {
+//   outline-color: var(--pink);
+// }
 //
