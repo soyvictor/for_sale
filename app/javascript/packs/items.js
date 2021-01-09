@@ -1,13 +1,13 @@
 const itemsImageCount = document.querySelectorAll('.img-rounded');
 
 itemsImageCount.forEach((item) => {
-  item.addEventListener('mouseover', () => {
-    item.classList.add('appears');
+  item.addEventListener('mouseover', (e) => {
+    e.currentTarget.nextElementSibling.classList.add('appears');
   });
 });
 
 itemsImageCount.forEach((item) => {
-  item.addEventListener('mouseout', () => {
-    item.classList.remove('appears');
+  item.addEventListener('mouseout', (e) => {
+    e.currentTarget.nextElementSibling.classList.remove('appears');
   });
 });

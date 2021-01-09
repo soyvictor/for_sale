@@ -3,29 +3,25 @@
 <div class="container mt-3">
   <div class="row justify-content-center">
     <div class="column">
-
-<% @items.each do |item| %>
-
-  <%= link_to item_path(item) do%>
-    <div class="item-box" style="position: relative;">
-        <% if item.photos.attached? %>
-          <%= cl_image_tag item.photos.first.key, width: 325, height: 240, crop: :pad,  class: "img-rounded", alt: "first slide" %>
-        <% else %>
-          <img src="https://picsum.photos/325/240" class="img-rounded" alt="">
+      <% @items.each do |item| %>
+        <%= link_to item_path(item) do%>
+          <div class="item-box" style="position: relative;">
+            <% if item.photos.attached? %>
+              <%= cl_image_tag item.photos.first.key, width: 325, height: 240, crop: :pad,  class: "img-rounded", alt: "first slide" %>
+            <% else %>
+              <img src="https://picsum.photos/325/240" class="img-rounded" alt="">
+            <% end %>
+            <% if item.photos.count > 1 %>
+              <div class="display-image-count">image 1 of <%= item.photos.count %></div>
+            <% end %>
+            <p class="item-name"><span class="item-name-underline"><%= item.name %></span><span class="price">$<%= item.price %></span></p>
+            <p class="price corner-price">$<%= item.price %></p>
+          </div>
         <% end %>
-          <p class="item-name"><span class="item-name-underline"><%= item.name %></span><span class="price">$<%= item.price %></span></p>
-          <% if item.photos.count > 1 %>
-          <div class="display-image-count">image 1 of <%= item.photos.count %></div>
-          <% end %>
-          <p class="price corner-price">$<%= item.price %></p>
+      <% end %>
     </div>
-  <% end %>
-  <% end %>
-    </div>
-
-    </div>
-
-    </div>
+  </div>
+</div>
 
 
 <%= javascript_pack_tag 'items' %>
