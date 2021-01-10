@@ -9,16 +9,18 @@ const carouselImageCounterHtml = document.querySelector('.carousel-image-counter
 const carouselImagesLength = Number.parseInt(carouselImageCounterHtml.dataset.count, 10);
 let thumbnailCount = 0;
 
-firstThumbnail.classList.add('highlightOrange');
-
-function updateImageCounter(count) {
+function updateCarouselImageCounter(count) {
   carouselImageCounterHtml.innerText = `image ${count + 1} of ${carouselImagesLength}`;
 }
 
-const highlightOrange = (e) => {
+function removeOrangeHightlight() {
   thumbnails.forEach((thumbnail) => {
     thumbnail.classList.remove('highlightOrange');
-  })
+  });
+}
+
+const highlightOrange = (e) => {
+  removeOrangeHightlight();
   const imageNumber = Number.parseInt(e.target.dataset.count);
   e.target.classList.add('highlightOrange');
   allCarouselImages.forEach((image) => {
@@ -26,17 +28,11 @@ const highlightOrange = (e) => {
   });
   allCarouselImages[`${imageNumber}`].classList.add('active');
   thumbnailCount = imageNumber;
-  updateImageCounter(thumbnailCount);
+  updateCarouselImageCounter(thumbnailCount);
 };
 
-allThumbnails.forEach((thumbnail) => {
-  thumbnail.addEventListener('mouseover', highlightOrange);
-});
-
 const highlightThumbnailNext = () => {
-  thumbnails.forEach((thumbnail) => {
-    thumbnail.classList.remove('highlightOrange')
-  });
+  removeOrangeHightlight();
   if (thumbnailCount < (thumbnailsLength - 1) ) {
     allThumbnails[`${thumbnailCount + 1}`].classList.add('highlightOrange');
     thumbnailCount += 1;
@@ -44,13 +40,11 @@ const highlightThumbnailNext = () => {
     allThumbnails[0].classList.add('highlightOrange');
     thumbnailCount = 0;
   }
-  updateImageCounter(thumbnailCount);
+  updateCarouselImageCounter(thumbnailCount);
 };
 
 const highlightThumbnailPrev = () => {
-  thumbnails.forEach((thumbnail) => {
-    thumbnail.classList.remove('highlightOrange')
-  });
+  removeOrangeHightlight();
   if (thumbnailCount == 0) {
     allThumbnails[`${thumbnailsLength - 1}`].classList.add('highlightOrange');
     thumbnailCount = thumbnailsLength - 1;
@@ -58,9 +52,15 @@ const highlightThumbnailPrev = () => {
     allThumbnails[`${thumbnailCount - 1}`].classList.add('highlightOrange');
     thumbnailCount -= 1;
   }
-  updateImageCounter(thumbnailCount);
+  updateCarouselImageCounter(thumbnailCount);
 };
 
-
+// Event Listeners
+allThumbnails.forEach((thumbnail) => {
+  thumbnail.addEventListener('mouseover', highlightOrange);
+});
 nextButton.addEventListener('click', highlightThumbnailNext);
 prevButton.addEventListener('click', highlightThumbnailPrev);
+
+// Start of page
+firstThumbnail.classList.add('highlightOrange');
