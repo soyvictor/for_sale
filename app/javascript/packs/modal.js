@@ -1,4 +1,3 @@
-
 // begin wesbos code
 const modal = document.querySelector('.modal');
 const carousel = document.querySelector('.carousel-inner');
@@ -82,6 +81,5 @@ function openModal() {
   // These are our event listeners
 
   carouselImages.forEach(image => image.addEventListener('click', (e) => showImage(e.currentTarget)));
-
   modal.addEventListener('click', handleClickOutside);
 
