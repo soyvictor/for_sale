@@ -5,6 +5,10 @@ const carousel = document.querySelector('.carousel-inner');
 const carouselImages = document.querySelectorAll('.carousel-item');
 const prevButton = modal.querySelector('.prev');
 const nextButton = modal.querySelector('.next');
+const modalImageCounter = document.querySelector('.modal-image-counter');
+const modalImagesLength = carouselImages.length;
+console.log(modalImagesLength);
+let modalImagesCount = 0;
 
 function openModal() {
     console.info('Opening Modal...');
@@ -43,8 +47,13 @@ function openModal() {
     if (event.key === 'ArrowLeft') return showPrevImage();
   }
 
+  function updateImageCounter(count) {
+  modalImageCounter.innerText = `image ${count} of ${modalImagesLength}`;
+}
+
   function showNextImage() {
     showImage(currentImage.nextElementSibling || carousel.firstElementChild);
+
   }
 
   function showPrevImage() {
@@ -56,9 +65,12 @@ function openModal() {
       console.info('no image to show');
       return
     }
-
+      console.log(el);
       // update the modal with this info
       const image = el.querySelector('img');
+      const modalImageNumber = Number.parseInt(image.dataset.count, 10);
+      console.log(modalImageNumber);
+      updateImageCounter(modalImageNumber);
       const source = image.src;
       modal.querySelector('img').src = source
       modal.querySelector('h2').textContent = el.title;

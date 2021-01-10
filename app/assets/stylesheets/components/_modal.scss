@@ -61,6 +61,22 @@
   // transform: translateY(0);
 }
 
+.top-level {
+  position: absolute;
+  z-index: 999;
+  top: 0;
+  // left: 0;
+  background: white;
+  font-size: 13px;
+  display: grid;
+  width: 100%;
+  align-items: center;
+  justify-items: center;
+  opacity: 1;
+  color: black;
+  padding: 2px;
+}
+
 
 // wesbos base css button styling.
 a {
