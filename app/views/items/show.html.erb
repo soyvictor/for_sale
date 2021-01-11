@@ -58,7 +58,7 @@
 <div class="modal">
   <div class="modalInner pos-relative">
     <% if @item.photos.count > 1 %>
-      <div class="modal-image-counter top-level" data-count="<%= @item.photos.count %>">image 1 of <%= @item.photos.count %></div>
+      <div class="modal-image-counter top-level" style="opacity: 0.7 !important" data-count="<%= @item.photos.count %>">image 1 of <%= @item.photos.count %></div>
     <% end %>
     <% if @item.photos.length == 1 %>
       <button aria-label="Previous Photo" class="prev hidden-opacity"><</button>
