@@ -69,10 +69,9 @@ function openModal() {
       // update the modal with this info
       const image = el.querySelector('img');
       const modalImageNumber = Number.parseInt(image.dataset.count, 10);
-      console.log(modalImageNumber);
-      if (el.querySelector('.carousel-image-counter') !== null ) {
-      updateImageCounter(modalImageNumber);
-      }
+      if(!!modalImageCounter) {
+        updateImageCounter(modalImageNumber);
+      };
       const source = image.src;
       modal.querySelector('img').src = source
       modal.querySelector('h2').textContent = el.title;
