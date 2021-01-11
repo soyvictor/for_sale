@@ -11,12 +11,13 @@
           <div id="carouselExampleControls" class="carousel slide carousel-slider" data-ride="carousel" data-interval="false">
             <div class="carousel-inner rounded mb-3" style="width: 100%; height: 400px !important;">
               <div class="carousel-item active">
-                <%= cl_image_tag @item.photos.first.key, width: 400, height: 400, crop: :pad, class: "d-block w-100 h-100 carousel-img", alt: "first slide", "data-count": "1" %>
+                <%= cl_image_tag @item.photos.first.key, width: 800, height: 800, crop: :pad, class: "d-block w-100 h-100 carousel-img", alt: "first slide", "data-count": "1" %>
               </div>
+              <!-- 400 400  -->
               <% photoCount = 2  %>
               <% @item.photos.drop(1).each do |photo| %>
                 <div class="carousel-item">
-                  <%= cl_image_tag photo.key, width: 400, height: 400, crop: :pad,  class: "d-block w-100 h-100 carousel-img", alt: "a slide", "data-count": "#{photoCount}" %>
+                  <%= cl_image_tag photo.key, width: 800, height: 800, crop: :pad,  class: "d-block w-100 h-100 carousel-img", alt: "a slide", "data-count": "#{photoCount}" %>
                 </div>
                 <% photoCount += 1 %>
               <% end %>

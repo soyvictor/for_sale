@@ -4,16 +4,21 @@
   height: 325px;
   background-color: white;
   border-radius: 6px;
-  box-shadow: 1px 1px 4px #cccccc;
+  box-shadow: .5px .5px 10px #cccccc;
   margin: 16px;
   color: #0001ee;
+  border: 1px solid rgba(204, 204, 204, 1.00);
   // outline-style: solid;
   // outline-width: 1px;
   // outline-color: rgba(204, 204, 204, 1.00);
-  // border: 1px solid rgba(204, 204, 204, 1.00);
+
 }
 
 .img-rounded {
+  border-radius: 6px;
+}
+
+.text-rounded {
   border-radius: 6px 6px 0px 0px;
 }
 

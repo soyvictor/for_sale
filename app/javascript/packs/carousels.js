@@ -1,8 +1,12 @@
 const allCarousels =  document.querySelectorAll('.item-box');
 
 function DISPLAYIMAGECOUNT(itemBox) {
-  let counter = 1;
   const carouselImageCounterHtml = itemBox.querySelector('.image-counter');
+  console.log(!!carouselImageCounterHtml);
+  if (!carouselImageCounterHtml) {
+    return;
+  }
+  let counter = 1;
   const carouselImagesLength = Number.parseInt(carouselImageCounterHtml.dataset.count, 10);
   const nextButton = itemBox.querySelector('.carousel-control-next');
   console.log(nextButton);
@@ -45,49 +49,3 @@ function DISPLAYIMAGECOUNT(itemBox) {
 allCarousels.forEach((carousel) => {
   DISPLAYIMAGECOUNT(carousel);
 })
-
-
-// const allImages = document.querySelectorAll('.carousel-img')
-
-//   allImages.forEach((image) => {
-//     image.addEventListener('mouseover', (e) => {
-//       console.log(e.target);
-//       // e.currentTarget.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.querySelector('.display-image-count').classList.add('appears');
-//     });
-//   });
-
-//   allImages.forEach((image) => {
-//     image.addEventListener('mouseover', (e) => {
-//       e.currentTarget.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.querySelector('.display-image-count').classList.remove('appears');
-//     });
-//   });
-
-
-// will comment out this code below...starting afresh.
-
-// const itemsImageCount = document.querySelectorAll('.carousel-img');
-
-// itemsImageCount.forEach((item) => {
-//   item.addEventListener('mouseover', (e) => {
-//     e.currentTarget.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.querySelector('.display-image-count').classList.add('appears');
-//   });
-// });
-
-// itemsImageCount.forEach((item) => {
-//   item.addEventListener('mouseout', (e) => {
-//     e.currentTarget.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.querySelector('.display-image-count').classList.remove('appears');
-//   });
-// });
-
-// itemsImageCount.forEach((item) => {
-//   item.addEventListener('mouseover', (e) => {
-//     console.log(e);
-//     e.currentTarget.nextElementSibling.classList.add('appears');
-//   });
-// });
-
-// itemsImageCount.forEach((item) => {
-//   item.addEventListener('mouseout', (e) => {
-//     e.currentTarget.nextElementSibling.classList.remove('appears');
-//   });
-// });
