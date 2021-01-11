@@ -2,6 +2,7 @@
 const modal = document.querySelector('.modal');
 const carousel = document.querySelector('.carousel-inner');
 const carouselImages = document.querySelectorAll('.carousel-item');
+console.log('hi from modalImage', carouselImages);
 const prevButton = modal.querySelector('.prev');
 const nextButton = modal.querySelector('.next');
 const modalImageCounter = document.querySelector('.modal-image-counter');
@@ -69,7 +70,9 @@ function openModal() {
       const image = el.querySelector('img');
       const modalImageNumber = Number.parseInt(image.dataset.count, 10);
       console.log(modalImageNumber);
+      if (el.querySelector('.carousel-image-counter') !== null ) {
       updateImageCounter(modalImageNumber);
+      }
       const source = image.src;
       modal.querySelector('img').src = source
       modal.querySelector('h2').textContent = el.title;
