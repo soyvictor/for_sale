@@ -1,10 +1,10 @@
 <p style="margin:8px;">Hey, I'm Victor.  These are currently all the things I have for sale in Mexico City, specifically in Azcapotzalco.  I may be able to deliver some items.  You can contact me on Whatsapp at xxxxxxxxxxxxxxx.</p>
 
 <div class="container mt-3" align="center">
-<div class="cards" style="width: 1023px">
+<div class="cards" style="width: 1023px; max-width: 100vw;">
       <% carouselNumber = 0 %>
       <% @items.each do |item| %>
-      <div>
+      <div style="max-width: 325px">
         <%= link_to item_path(item) do%>
           <div class="item-box text-left" style="position: relative;">
             <% if item.photos.attached? %>
