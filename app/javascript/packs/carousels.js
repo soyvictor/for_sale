@@ -2,14 +2,12 @@ const allCarousels =  document.querySelectorAll('.item-box');
 
 function DISPLAYIMAGECOUNT(itemBox) {
   const carouselImageCounterHtml = itemBox.querySelector('.image-counter');
-  console.log(!!carouselImageCounterHtml);
   if (!carouselImageCounterHtml) {
     return;
   }
   let counter = 1;
   const carouselImagesLength = Number.parseInt(carouselImageCounterHtml.dataset.count, 10);
   const nextButton = itemBox.querySelector('.carousel-control-next');
-  console.log(nextButton);
   const prevButton = itemBox.querySelector('.carousel-control-prev');
 
   itemBox.addEventListener('mouseover', (e) => {

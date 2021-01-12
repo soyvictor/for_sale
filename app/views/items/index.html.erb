@@ -1,7 +1,10 @@
-<p style="margin:8px;">Hey, I'm Victor.  These are currently all the things I have for sale in Mexico City, specifically in Azcapotzalco.  I may be able to deliver some items.  You can contact me on Whatsapp at xxxxxxxxxxxxxxx.</p>
+<!-- <p style="margin:16px;">Hey, I'm Victor.  These are things I currently have for sale in Mexico City, specifically in municipio Azcapotzalco.  I may be able to deliver some items.  You can contact me on Whatsapp at xxxxxxxxxxxxxxx.</p> -->
 
-<div class="container mt-3" align="center">
+<div class="main-container mt-3" align="center" style="max-width: 1007px; margin: 16px auto;">
+  <p class="text-left">Hey, I'm Victor.  These are things I'm selling in Mexico City, in municipio Azcapotzalco.  I may be able to deliver some items.  You can contact me on Whatsapp at xxxxxxxxxxxxxxx.</p>
 <div class="cards justify-content-center">
+
+
       <% carouselNumber = 0 %>
       <% @items.each do |item| %>
       <div>
@@ -19,7 +22,7 @@
                       <% item.photos.drop(1).each do |photo| %>
 
                         <div class="carousel-item" style="cursor: pointer !important">
-                          <%= cl_image_tag photo.key, width: 325, height: 240, crop: :pad,  class: "d-block w-100 h-100 carousel-img img-rounded", alt: "a slide" %>
+                          <%= cl_image_tag photo.key, width: 640, height: 480, crop: :pad,  class: "d-block w-100 h-100 carousel-img img-rounded", alt: "a slide" %>
                         </div>
                       <% end %>
                     </div>
