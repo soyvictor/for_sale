@@ -29,9 +29,19 @@ div.item-text {
   margin: 0px 0px 0px 16px;
   display: inline-block;
   font-size: 16px;
+  color: #0001ee;
+}
+
+a {
+  color: #0001ee;
+}
+
+.item-name:visited, a:visited {
+  color: rgba(86, 26, 139, 1.00);
 }
 
 .item-name-underline:hover {
+  color: #0001ee;
   text-decoration-line: underline;
 }
 

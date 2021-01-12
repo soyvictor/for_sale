@@ -48,7 +48,7 @@
             <% if item.photos.count > 1 %>
               <div class="image-counter display-image-count text-rounded" data-count="<%= item.photos.count %>">image 1 of <%= item.photos.count %></div>
             <% end %>
-            <p class="item-name"><span class="item-name-underline"><%= item.name %></span><span class="price">$<%= item.price %></span></p>
+            <%= link_to item_path(item) do%><p class="item-name"><span class="item-name-underline"><%= item.name %></span><% end %><span class="price">$<%= item.price %></span></p>
             <p class="price corner-price">$<%= item.price %></p>
           </div>
         <% end %>
