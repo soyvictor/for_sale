@@ -2,12 +2,10 @@
 const modal = document.querySelector('.modal');
 const carousel = document.querySelector('.carousel-inner');
 const carouselImages = document.querySelectorAll('.carousel-item');
-console.log('hi from modalImage', carouselImages);
 const prevButton = modal.querySelector('.prev');
 const nextButton = modal.querySelector('.next');
 const modalImageCounter = document.querySelector('.modal-image-counter');
 const modalImagesLength = carouselImages.length;
-console.log(modalImagesLength);
 let modalImagesCount = 0;
 
 function openModal() {
@@ -65,19 +63,30 @@ function openModal() {
       console.info('no image to show');
       return
     }
-      console.log(el);
-      // update the modal with this info
-      const image = el.querySelector('img');
-      const modalImageNumber = Number.parseInt(image.dataset.count, 10);
+
+    // update the modal with this info
+    const image = el.querySelector('img');
+    const source = image.src;
+    const modalImageNumber = Number.parseInt(image.dataset.count, 10);
+
+    if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
+      // true for mobile device
+      console.log("this person is on mobile!");
+      window.open(`${source}`, "_self");
+      return;
+    } else{
+
       if(!!modalImageCounter) {
         updateImageCounter(modalImageNumber);
       };
-      const source = image.src;
+
       modal.querySelector('img').src = source
       modal.querySelector('h2').textContent = el.title;
       modal.querySelector('figure p').textContent = el.dataset.description;
       currentImage = el;
       openModal();
+
+      }
   }
 
   // These are our event listeners
