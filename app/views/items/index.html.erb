@@ -11,7 +11,7 @@
               <% if item.photos.attached? %>
                 <div style="max-width: 325px; position: relative;">
                    <div id="carousel<%= carouselNumber %>" class="carousel slide carousel-slider" data-ride="carousel" data-interval="false" data-touch="false">
-                    <div class="carousel-inner rounded mb-3" style="width: 100%; height: 240px !important;">
+                    <div class="carousel-inner rounded mb-1" style="width: 100%; height: 240px !important;">
                       <div class="carousel-item active" style="cursor: pointer !important">
                         <%= cl_image_tag item.photos.first.key, width: 640, height: 480, crop: :pad, class: "d-block w-100 h-100 carousel-img img-rounded", alt: "first slide" %>
                       </div>

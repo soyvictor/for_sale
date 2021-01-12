@@ -27,3 +27,13 @@ p.review {
 .show-container {
   background-color:rgba(255,200,100,0.1)
 }
+
+.show-carousel {
+  height: 400px;
+}
+
+@media(max-width: 576px) {
+  .show-carousel {
+    height: 320px;
+  }
+}
