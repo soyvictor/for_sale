@@ -1,26 +1,20 @@
 <p style="margin:8px;">Hey, I'm Victor.  These are currently all the things I have for sale in Mexico City, specifically in Azcapotzalco.  I may be able to deliver some items.  You can contact me on Whatsapp at xxxxxxxxxxxxxxx.</p>
 
 <div class="container mt-3" align="center">
-<div class="cards" style="width: 1023px; max-width: 100vw;">
+<div class="cards justify-content-center">
       <% carouselNumber = 0 %>
       <% @items.each do |item| %>
-      <div style="max-width: 325px">
+      <div>
         <%= link_to item_path(item) do%>
           <div class="item-box text-left" style="position: relative;">
             <% if item.photos.attached? %>
               <% if item.photos.attached? %>
                 <div style="max-width: 325px; position: relative;">
-                  <!-- <% if item.photos.count > 1 %> -->
-
-                  <!-- <% end %> -->
                    <div id="carousel<%= carouselNumber %>" class="carousel slide carousel-slider" data-ride="carousel" data-interval="false">
-
                     <div class="carousel-inner rounded mb-3" style="width: 100%; height: 240px !important;">
                       <div class="carousel-item active" style="cursor: pointer !important">
                         <%= cl_image_tag item.photos.first.key, width: 640, height: 480, crop: :pad, class: "d-block w-100 h-100 carousel-img img-rounded", alt: "first slide" %>
                       </div>
-                      <!-- 325 240 -->
-
 
                       <% item.photos.drop(1).each do |photo| %>
 
@@ -47,15 +41,10 @@
                  <!-- <%= cl_image_tag item.photos.first.key, width: 325, height: 240, crop: :pad,  class: "img-rounded", alt: "first slide" %> -->
               <% end %>
 
-
-
-
-
             <% else %>
               <img src="https://picsum.photos/325/240" class="imgTest" alt="">
             <% end %>
             <% if item.photos.count > 1 %>
-              <!-- <div class="display-image-count">image 1 of <%= item.photos.count %></div> -->
               <div class="image-counter display-image-count text-rounded" data-count="<%= item.photos.count %>">image 1 of <%= item.photos.count %></div>
             <% end %>
             <p class="item-name"><span class="item-name-underline"><%= item.name %></span><span class="price">$<%= item.price %></span></p>
