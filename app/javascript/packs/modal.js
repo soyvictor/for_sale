@@ -72,7 +72,7 @@ function openModal() {
     if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
       // true for mobile device
       console.log("this person is on mobile!");
-      window.open(`${source}`, "_self");
+      window.open(`${source}`);
       return;
     } else{
 
