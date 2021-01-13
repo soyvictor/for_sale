@@ -63,4 +63,5 @@ nextButton.addEventListener('click', highlightThumbnailNext);
 prevButton.addEventListener('click', highlightThumbnailPrev);
 
 // Start of page
+
 firstThumbnail.classList.add('highlightOrange');
