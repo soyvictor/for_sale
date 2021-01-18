@@ -41,7 +41,7 @@
           <div class="mb-2 mt-1">
             <% the_num2 = 0 %>
             <% @item.photos.take(10).each do |photo| %>
-              <%= cl_image_tag photo.key, size:"70x70", class: "thumbnail", style:"border-radius: 6px;", :data => { :count => "#{the_num2}" }%>
+              <%= cl_image_tag photo.key, width: 70, height: 70, class: "thumbnail", style:"border-radius: 6px; object-fit: cover;", :data => { :count => "#{the_num2}" }%>
               <% the_num2 += 1 %>
             <% end %>
           </div>
