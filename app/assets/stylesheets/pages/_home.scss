@@ -14,14 +14,6 @@
   justify-items: center;
   align-items: center;
   background-color: #00acf3;
-  // background-color: #810709;
-  // background-image:
-  //   linear-gradient(rgba(255,255,255,.5) 2px, transparent 2px),
-  //   linear-gradient(90deg, rgba(255,255,255,.5) 2px, transparent 2px),
-  //   linear-gradient(rgba(255,255,255,.28) 1px, transparent 1px),
-  //   linear-gradient(90deg, rgba(255,255,255,.28) 1px, transparent 1px);
-  // background-size: 100px 100px, 100px 100px, 20px 20px, 20px 20px;
-  // background-position: -2px -2px, -2px -2px, -1px -1px, -1px -1px;
 }
 
 .for-sale-sign p {
@@ -40,12 +32,6 @@
   margin-top: 32px;
 }
 
-// .cards {
-//   display: grid;
-//   grid-template-columns: 325px 325px 325px;
-//   grid-gap: 16px;
-// }
-
 .cards {
   display: flex;
   justify-content: center;
@@ -58,9 +44,19 @@ header {
   text-align: center;
 }
 
-header p {
-  // margin: 0px 8px;
+.item-box::after {
+    content: "";
+    flex: auto;
 }
+
+
+// Unused CSS Grid code
+
+// .cards {
+//   display: grid;
+//   grid-template-columns: 325px 325px 325px;
+//   grid-gap: 16px;
+// }
 
 // @media(max-width: 576px) {
 //   .cards {
