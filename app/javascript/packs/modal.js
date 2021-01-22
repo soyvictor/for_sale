@@ -6,6 +6,7 @@ const prevButton = modal.querySelector('.prev');
 const nextButton = modal.querySelector('.next');
 const modalImageCounter = document.querySelector('.modal-image-counter');
 const modalImagesLength = carouselImages.length;
+const modalCloseButton = document.querySelector('.modal-close-button');
 let modalImagesCount = 0;
 
 function openModal() {
@@ -92,5 +93,6 @@ function openModal() {
   // These are our event listeners
 
   carouselImages.forEach(image => image.addEventListener('click', (e) => showImage(e.currentTarget)));
+  modalCloseButton.addEventListener('click', closeModal);
   modal.addEventListener('click', handleClickOutside);
 
