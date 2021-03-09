@@ -69,11 +69,16 @@
     <% else %>
       <button aria-label="Previous Photo" class="prev"><</button>
     <% end %>
-    <!-- <figure> -->
-      <% if @item.photos.count > 1 %>
+    <figure>
       <%= cl_image_tag @item.photos.first.key, width: 800, height: 800, crop: :pad, alt: "first slide" %>
-      <% end %>
-    <!-- </figure> -->
+      <figcaption>
+        <h2>Test Title</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor dignissimos obcaecati nisi placeat eaque
+          voluptate, exercitationem eius? Non, iusto provident itaque, voluptate labore a alias officia, amet sunt
+          pariatur praesentium tenetur voluptatibus dolores mollitia quasi aliquid assumenda possimus maiores
+          exercitationem!</p>
+      </figcaption>
+    </figure>
     <% if @item.photos.length == 1 %>
       <button class="next hidden-opacity" aria-label="Next Photo">></button>
     <% else %>

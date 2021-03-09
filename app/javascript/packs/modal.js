@@ -82,8 +82,8 @@ function openModal() {
       };
 
       modal.querySelector('img').src = source
-      // modal.querySelector('h2').textContent = el.title;
-      // modal.querySelector('figure p').textContent = el.dataset.description;
+      modal.querySelector('h2').textContent = el.title;
+      modal.querySelector('figure p').textContent = el.dataset.description;
       currentImage = el;
       openModal();
 
