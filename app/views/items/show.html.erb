@@ -1,4 +1,7 @@
 <div class="container show-container mt-4 p-4" style="min-height: 620px">
+  <% if @item.enabled == false %>
+    <h1>Sorry, this item is either not currently for sale or has been sold.</h1>
+  <% else %>
   <h1><%= @item.name %> - $<%= @item.price %></h1>
   <div class="row">
     <div class="col-lg-5">
@@ -89,6 +92,7 @@
     <i class="fas fa-times-circle modal-close-button"></i>
 
   </div>
+  <% end %>
 </div>
 
 <%= javascript_pack_tag 'carousel' %>

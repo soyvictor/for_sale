@@ -21,7 +21,7 @@ class ItemsController < ApplicationController
   end
 
   def index
-    @items = Item.all.sort_by { |i| i.id}
+    @items = Item.all.where(enabled: true).sort_by { |i| i.id}
   end
 
   def edit
@@ -43,7 +43,7 @@ class ItemsController < ApplicationController
   private
 
   def item_params
-    params.require(:item).permit(:name, :description, :price, photos: [])
+    params.require(:item).permit(:name, :description, :price, :enabled, photos: [])
   end
 
   def find_item
