@@ -1,6 +1,6 @@
 const allCarousels =  document.querySelectorAll('.item-box');
 
-function DisplayImageCount(itemBox) {
+function displayImageCount(itemBox) {
   const carouselImageCounterHtml = itemBox.querySelector('.image-counter');
   if (!carouselImageCounterHtml) {
     return;
@@ -44,5 +44,5 @@ function DisplayImageCount(itemBox) {
 }
 
 allCarousels.forEach((carousel) => {
-  DisplayImageCount(carousel);
+  displayImageCount(carousel);
 })
