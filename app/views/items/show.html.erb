@@ -63,7 +63,8 @@
 </div>
 
 <div class="modal">
-  <div class="modalInner pos-relative">
+  <div class="modalInner">
+    <i class="fas fa-times-circle modal-close-button"></i>
     <% if @item.photos.count > 1 %>
       <div class="modal-image-counter top-level" style="opacity: 0.7 !important" data-count="<%= @item.photos.count %>">image 1 of <%= @item.photos.count %></div>
     <% end %>
@@ -89,7 +90,7 @@
     <% else %>
       <button class="next" aria-label="Next Photo">></button>
     <% end %>
-    <i class="fas fa-times-circle modal-close-button"></i>
+
 
   </div>
   <% end %>
